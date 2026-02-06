@@ -18,6 +18,7 @@ k.loadSprite("spritesheet", "./spritesheet.png", {
 k.loadSprite("island_map", "./joseph_island.png");
 k.loadSprite("room_map", "./map.png");
 k.loadSound("bgm", "./background_music.mp3");
+k.loadSound("grass_walk", "./grass_walking.m4a");
 
 k.setBackground(k.Color.fromHex("#311047"));
 
@@ -128,14 +129,28 @@ function setupScene(mapData, mapSpriteName, scaleFactor, onEnterhouse = null, on
   return { map, player };
 }
 
-function addMovementAndCamera(player) {
+const STEP_INTERVAL = 0.35;
+
+function addMovementAndCamera(player, options = {}) {
+  const onStep = options.onStep;
+  let isMoving = false;
+  let lastStepTime = 0;
+
   k.onUpdate(() => {
     k.camPos(player.worldPos().x, player.worldPos().y - 100);
+    if (onStep && isMoving) {
+      const now = k.time();
+      if (lastStepTime === 0 || now - lastStepTime >= STEP_INTERVAL) {
+        onStep();
+        lastStepTime = now;
+      }
+    }
   });
 
   k.onMouseDown((mouseBtn) => {
     if (mouseBtn !== "left" || player.isInDialogue) return;
 
+    isMoving = true;
     const worldMousePos = k.toWorld(k.mousePos());
     player.moveTo(worldMousePos, player.speed);
 
@@ -180,6 +195,7 @@ function addMovementAndCamera(player) {
   });
 
   function stopAnims() {
+    isMoving = false;
     if (player.direction === "down") {
       player.play("idle-down");
       return;
@@ -208,6 +224,7 @@ function addMovementAndCamera(player) {
     if (nbOfKeyPressed > 1) return;
     if (player.isInDialogue) return;
     if (keyMap[0]) {
+      isMoving = true;
       player.flipX = false;
       if (player.curAnim() !== "walk-side") player.play("walk-side");
       player.direction = "right";
@@ -215,6 +232,7 @@ function addMovementAndCamera(player) {
       return;
     }
     if (keyMap[1]) {
+      isMoving = true;
       player.flipX = true;
       if (player.curAnim() !== "walk-side") player.play("walk-side");
       player.direction = "left";
@@ -222,12 +240,14 @@ function addMovementAndCamera(player) {
       return;
     }
     if (keyMap[2]) {
+      isMoving = true;
       if (player.curAnim() !== "walk-up") player.play("walk-up");
       player.direction = "up";
       player.move(0, -player.speed);
       return;
     }
     if (keyMap[3]) {
+      isMoving = true;
       if (player.curAnim() !== "walk-down") player.play("walk-down");
       player.direction = "down";
       player.move(0, player.speed);
@@ -255,7 +275,11 @@ k.scene("island", async (opts = {}) => {
 
   setCamScale(k);
   k.onResize(() => setCamScale(k));
-  addMovementAndCamera(player);
+  addMovementAndCamera(player, {
+    onStep: () => {
+      k.play("grass_walk", { volume: 1 });
+    },
+  });
 });
 
 k.scene("room", async () => {

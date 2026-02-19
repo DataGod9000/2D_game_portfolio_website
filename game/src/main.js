@@ -260,10 +260,25 @@ function addMovementAndCamera(player, options = {}) {
 k.scene("island", async (opts = {}) => {
   const loadingEl = document.getElementById("loading-screen");
   if (loadingEl) loadingEl.style.display = "none";
-  if (!window.__bgmStarted) {
-    window.__bgmStarted = true;
-    k.play("bgm", { loop: true, volume: 0.48 });
+
+  const tapEl = document.getElementById("tap-to-start");
+  if (!window.__bgmStarted && tapEl) {
+    tapEl.style.display = "flex";
+    const startBgm = () => {
+      window.__bgmStarted = true;
+      k.play("bgm", { loop: true, volume: 0.48 });
+      tapEl.style.display = "none";
+      document.removeEventListener("mousedown", startBgm);
+      document.removeEventListener("touchstart", startBgm);
+      document.removeEventListener("keydown", startBgm);
+    };
+    document.addEventListener("mousedown", startBgm, { once: true });
+    document.addEventListener("touchstart", startBgm, { once: true });
+    document.addEventListener("keydown", startBgm, { once: true });
+  } else if (window.__bgmStarted && tapEl) {
+    tapEl.style.display = "none";
   }
+
   const useExitSpawn = opts.useExitSpawn === true;
   const mapData = await (await fetch("./joseph_island.json")).json();
   const { player } = setupScene(

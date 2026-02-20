@@ -4,11 +4,16 @@ Your repo already has a workflow that builds and deploys the game. You only need
 
 ## One-time setup on GitHub
 
-1. Open your repo: **https://github.com/DataGod9000/2D_game_portfolio_website**
-2. Go to **Settings** → **Pages** (left sidebar).
-3. Under **Build and deployment**:
+1. **Rename the repo to `josephland`** (so the site is at `https://datagod9000.github.io/josephland/`):
+   - Open your repo → **Settings** → under **Repository name** change `2D_game_portfolio_website` to **josephland** → **Rename**.
+   - Update your local remote:  
+     `git remote set-url origin https://github.com/DataGod9000/josephland.git`
+
+2. Open your repo: **https://github.com/DataGod9000/josephland**
+3. Go to **Settings** → **Pages** (left sidebar).
+4. Under **Build and deployment**:
    - **Source:** choose **GitHub Actions** (not “Deploy from a branch”).
-4. Save. You don’t need to create a workflow; it’s already in the repo.
+5. Save. You don’t need to create a workflow; it’s already in the repo.
 
 ## Deploy (automatic and manual)
 
@@ -19,19 +24,9 @@ Your repo already has a workflow that builds and deploys the game. You only need
 
 After the first successful run:
 
-**https://datagod9000.github.io/2D_game_portfolio_website/**
+**https://datagod9000.github.io/josephland/**
 
 (If your GitHub username is different, replace `datagod9000` with it.)
-
-## If you use a different repo name
-
-Edit `vite.config.js` and set `base` to your repo path:
-
-```js
-base: "/YOUR_REPO_NAME/",
-```
-
-Then redeploy (push to `main` or run the workflow again).
 
 ## Using a custom domain (optional)
 

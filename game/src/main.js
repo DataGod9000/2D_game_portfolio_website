@@ -127,7 +127,7 @@ function setupScene(mapData, mapSpriteName, scaleFactor, onEnterhouse = null, on
         const triggerY = obj.y;
         const triggerW = w;
         const triggerH = h;
-        const noEngageFromTop = triggerName === "Janet" || triggerName === "wenzheng" || triggerName === "mom" || triggerName === "dad" || triggerName === "shelves";
+        const noEngageFromTop = triggerName === "Janet" || triggerName === "wenzheng" || triggerName === "mom" || triggerName === "dad" || triggerName === "shelves" || triggerName === "kiki" || triggerName === "moca";
         player.onCollide(triggerName, () => {
           if (player.isInDialogue) return;
           if (dialogueCooldownSeconds > 0) {
@@ -376,6 +376,33 @@ k.scene("island", async (opts = {}) => {
       window.__bgmStarted = true;
       k.play("bgm", { loop: true, volume: 0.48 });
       tapEl.style.display = "none";
+      const gameCanvas = document.getElementById("game");
+      const focusCanvas = () => {
+        if (gameCanvas) {
+          gameCanvas.focus({ preventScroll: true });
+        }
+      };
+      focusCanvas();
+      requestAnimationFrame(() => {
+        focusCanvas();
+        requestAnimationFrame(focusCanvas);
+      });
+      setTimeout(focusCanvas, 50);
+      setTimeout(focusCanvas, 200);
+      let focusAttempts = 0;
+      const focusUntilActive = k.onUpdate(() => {
+        if (!gameCanvas) {
+          focusUntilActive.cancel();
+          return;
+        }
+        if (document.activeElement === gameCanvas) {
+          focusUntilActive.cancel();
+          return;
+        }
+        focusCanvas();
+        focusAttempts++;
+        if (focusAttempts > 180) focusUntilActive.cancel();
+      });
       document.removeEventListener("mousedown", startBgm);
       document.removeEventListener("touchstart", startBgm);
       document.removeEventListener("keydown", startBgm);
@@ -385,6 +412,8 @@ k.scene("island", async (opts = {}) => {
     document.addEventListener("keydown", startBgm, { once: true });
   } else if (window.__bgmStarted && tapEl) {
     tapEl.style.display = "none";
+    const gameCanvas = document.getElementById("game");
+    if (gameCanvas) gameCanvas.focus();
   }
 });
 

@@ -1,8 +1,17 @@
 # Joseph Land
 
-A 2D portfolio that is also a game. What happens when you give a determined person WiFi and no adult supervision? You get this. Explore boldly. If you are a hirer, end his unemployment arc. (That last part is not a joke. Please hire him.)
+A 2D portfolio disguised as a game.
 
-WASD or click/tap to move. Turn on volume for better immersion. Or leave it off and live in silence. Your call.
+What happens when you give one determined human WiFi, ambition, and no adult supervision?
+You get this.
+
+Explore boldly.
+If you are a hirer, please end his unemployment arc.
+(That last part is legally not a joke.)
+
+WASD or click/tap to move.
+Turn on volume for immersion.
+Or don't. Live in silence. That's your storyline.
 
 ---
 
@@ -15,7 +24,8 @@ npm install
 npm run dev
 ```
 
-Open the URL it prints. Try not to get lost.
+Open the URL it prints.
+Try not to get emotionally attached.
 
 ---
 
@@ -25,7 +35,8 @@ Open the URL it prints. Try not to get lost.
 npm run build
 ```
 
-A `dist` folder will appear. You did not hallucinate it.
+A `dist` folder will appear.
+This is real. You did not hallucinate it.
 
 ---
 
@@ -35,55 +46,59 @@ A `dist` folder will appear. You did not hallucinate it.
 npm run preview
 ```
 
+Congratulations. You are now playtesting Joseph.
+
 ---
 
 ## Who and what you will find
 
 ### On the island (outside)
 
-- **The slime** – Your first encounter. It will tell you what Joseph Land is. It is also a slime. We could not find a better sprite. It works.
-- **Wenzheng** – Grand Master (Managing Director) of the Data Guild. Thinks Joseph’s SQL is enchanted steel. Once tried to stump him; Joseph replied with a dashboard.
-- **Janet** – Keeper (Executive Director) of the Data Guild. Signs scrolls while Joseph conquers chaos. Will tell you to hire him before another kingdom does.
-- **Evan** – Vice President, Joseph’s direct boss. Mission: impossible timeline. Outcome: completed early. Enemy: legacy system. Result: restructured. Conclusion: Joseph needs larger quests, not more supervision.
-- **Chest 1 and Chest 2** – Wooden. Locked. Very mysterious. We are not telling you what is inside.
+- **The Slime** – Your first encounter. It explains Joseph Land. It is also a slime. Budget constraints were involved. It has personality.
+- **Wenzheng** – Grand Master (Managing Director) of the Data Guild. Once attempted to stump Joseph. Joseph replied with performance metrics. He is still recovering.
+- **Janet** – Keeper (Executive Director) of the Data Guild. Signs approval scrolls while Joseph reorganizes reality. Encourages you to hire him before another kingdom does.
+- **Evan** – Vice President. Gave Joseph an impossible timeline. Joseph finished early. Legacy systems fear him.
+- **Chest 1 & Chest 2** – Wooden. Locked. Suspicious. We are not elaborating.
 
 ### Inside the house (the room)
 
-- **Dad** – Joseph’s father. Types very fast. If you hire Joseph, you are also stabilizing Dad’s retirement portfolio. He has made this clear.
-- **Mom** – Made Joseph from scratch. She fed him properly. She has already told all the aunties he is successful. Your move.
-- **Kiki** – A dog. Small but emotionally powerful. Joseph buys the treats. If he does not get hired, treat budget drops. Kiki will stare at you through the screen.
-- **Moca** – Another dog. Cute. This is non-negotiable. Joseph funds the snack lifestyle. No hire means possible downgrade to regular kibble. Think carefully.
-- **Ceyline** – Joseph’s rich Indochinese girlfriend. If you do not hire him, he will be forced to live off her very large trust fund. Villas. Yachts. Mild inconvenience. She would prefer him ambitious, not lounging. So would he, probably.
+- **Dad** – Early-stage investor. ROI looking strong. Hiring Joseph directly impacts retirement stability. This is not subtle.
+- **Mom** – Built Joseph from scratch. Already told every auntie he is successful. You are now part of this narrative.
+- **Kiki** – Small dog. Emotionally powerful. Treat economy depends on Joseph's employment status.
+- **Moca** – Also a dog. Cute beyond negotiation. A no-hire scenario may trigger snack austerity measures.
+- **Ceyline** – Rich Indochinese girlfriend. If you do not hire Joseph, he will tragically survive on her large trust fund. Villas. Yachts. Financial peace. Please do not force this outcome.
 
-### Things you can click on (room)
+### Things you can click on
 
-- **Computer** – Joseph’s PC. Other devs know some languages; he claims to know them all. The receipts are on his GitHub.
-- **TV** – He watches tech YouTubers. The usual suspects. You can ask the TV.
-- **Fridge** – Leftovers from 2019. A carrot that might be from The Last of Us. Milk with a name and a lawyer. He is not touching any of it.
-- **Diploma** – Master’s in CS from UPenn. Somehow a guy who once struggled with printer drivers made it to the Ivy League. Please clap quietly.
-- **Game console** – Valorant. He instalocks duelist and will not apologise. Favourite game: Suikoden II. If you have not played it, he says you cannot be friends. (You can. But play it.)
-- **Coffee machine** – Or a printer. Depends who is asking.
-- **Shelves** – Books. He likes to stand in front of them and pretend he knows how to read.
-- **Resume** – On the desk. Achievements so dense they slightly bend reality. Link inside. Open before he adds “World Domination (In Progress)” to Experience.
-- **Drawers** – Clothes and random cables. Classic.
+- **Computer** – Claims Joseph knows all programming languages. Evidence and possible exaggeration on GitHub.
+- **TV** – Currently playing 10 uninterrupted hours of something boomers consider thrilling.
+- **Fridge** – Contains historical artifacts. Possibly sentient dairy.
+- **Diploma** – Master's in CS from UPenn. Proof that someone who once fought a printer driver survived the Ivy League.
+- **Game console** – Valorant instalock duelist behavior. No apologies. Also evangelizes Suikoden II aggressively.
+- **Coffee machine** – Could also be a printer. No one is certain.
+- **Shelves** – Books. Many books. Reading status classified.
+- **Resume** – On the desk. Highly optimized flex document. Open before it updates itself.
+- **Drawers** – Clothes and cables. The universal constant.
 
 ---
 
 ## How to host
 
 See [HOW_TO_DEPLOY.MD](HOW_TO_DEPLOY.MD).
+If it works, you're a wizard.
+
+---
 
 ## Deploy to a new GitHub repo
 
-This project is a single game with no extra folders. To put it in a new repo and push, see [DEPLOY_NEW_REPO.md](DEPLOY_NEW_REPO.md).
+See [DEPLOY_NEW_REPO.md](DEPLOY_NEW_REPO.md).
+If something breaks, pretend it's a feature.
 
 ---
 
 ## Credits and links
 
-- Live demo: https://jslegenddev.github.io/portfolio/
-- Tutorial (how this was built): https://www.youtube.com/watch?v=gwtfWORCN0U
-- New tutorial: https://www.youtube.com/watch?v=OejpBl2s9OY
-- Tileset (credit where it is due): https://momen-games.itch.io/happy-la-v2-ts
-
-No emojis were harmed in the making of this README.
+- **Live demo:** https://jslegenddev.github.io/portfolio/
+- **Tutorial:** https://www.youtube.com/watch?v=gwtfWORCN0U
+- **New tutorial:** https://www.youtube.com/watch?v=OejpBl2s9OY
+- **Tileset credit (respect where it's due):** https://momen-games.itch.io/happy-la-v2-ts
